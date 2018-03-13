@@ -5,6 +5,8 @@ gprMax 中可用指令`src_steps`和`rx_steps`来移动发射天线和接收天�
 
 以下是官网的[金属圆柱示例](http://docs.gprmax.com/en/latest/examples_simple_2D.html#b-scan-from-a-metal-cylinder):
 
+![模型](http://docs.gprmax.com/en/latest/_images/cylinder_half_space_geo.png)
+
     #title: B-scan from a metal cylinder buried in a dielectric half-space
     #domain: 0.240 0.210 0.002
     #dx_dy_dz: 0.002 0.002 0.002
@@ -25,3 +27,4 @@ gprMax 中可用指令`src_steps`和`rx_steps`来移动发射天线和接收天�
 
     python -m gprMax user_models/cylinder_Bscan_2D.in -n 60
 
+仿真过程中，模型是没有变化的。现在假如需要对模型进行改变
