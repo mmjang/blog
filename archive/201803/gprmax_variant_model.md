@@ -27,4 +27,24 @@ gprMax 中可用指令`src_steps`和`rx_steps`来移动发射天线和接收天�
 
     python -m gprMax user_models/cylinder_Bscan_2D.in -n 60
 
-仿真过程中，模型是没有变化的。现在假如需要对模型进行改变
+仿真过程中，模型是没有变化的。现在假如需要天线在运动的同时，金属圆柱上下简谐振荡，则需要每跑一道波形就移动一下金属，不能用标准的B-Scan方法。一种新的思路是：
+
+首先将原配置文件中需要变化的部分用占位符`{x}`代替。
+
+    #title: B-scan from a metal cylinder buried in a dielectric half-space
+    #domain: 0.240 0.210 0.002
+    #dx_dy_dz: 0.002 0.002 0.002
+    #time_window: 3e-9
+
+    #material: 6 0 1 0 half_space
+
+    #waveform: ricker 1 1.5e9 my_ricker
+    #hertzian_dipole: z {0} 0.170 0 my_ricker
+    #rx: {1} 0.170 0
+
+    #box: 0 0 0 0.240 0.170 0.002 half_space
+    #cylinder: 0.120 {2} 0 0.120 {2} 0.002 0.010 pec
+
+其中`{0}`是发射天线的`x`坐标，`{1}`是接收天线的`x`坐标，`{2}`是圆柱圆心的`y`坐标。
+
+以这个文件作为模板，可以用一个 python 脚本生成多个参数不一样的模型文件，并调用 gprmax 执行
