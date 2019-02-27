@@ -1,4 +1,4 @@
-《Learning Vocabulary in Another Language》是一本关于第二语言词汇学习的专著。原书学术风格强，枯燥无味，以下是我略读之后记得的要点：
+《[Learning Vocabulary in Another Language](https://www.amazon.com/Learning-Vocabulary-Language-Cambridge-Linguistics/dp/0521804981)》是一本关于第二语言词汇学习的专著。原书学术风格强，枯燥无味，以下是我略读之后记得的要点：
 
 受过教育的英语母语者平均知道2万词族。
 
